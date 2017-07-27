@@ -71,12 +71,16 @@ swiftmailer:
 
 fos_rest:
     view:
-        formats:
-            xml: false
+        view_response_listener:
+            enabled: true #return json
     serializer:
         serialize_null: true
     body_converter:
-        enabled: true #convertir json  => object
+        enabled: true #convertir json  => object (deserialisation)
+    format_listener: #Serialization automatique au format JSON
+        rules:
+            - { path: '^/', priorities: ['json'], fallback_format: 'json' }
+
 
 
 
