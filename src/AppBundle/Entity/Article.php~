@@ -36,7 +36,8 @@ class Article
     private $content;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Author", cascade={"all"}, fetch="EAGER", inversedBy="articles")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Author", cascade={"all"}, fetch="EAGER")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $author;
 
