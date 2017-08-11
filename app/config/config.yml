@@ -70,6 +70,8 @@ swiftmailer:
     spool: { type: memory }
 
 fos_rest:
+    param_fetcher_listener: force
+
     view:
         view_response_listener:
             enabled: true #return json
